@@ -18,10 +18,20 @@ private:
 public:
     User() {
         // TODO: Implement default constructor
+     username = "unknown";
+     password = "ooooooo" ;
+     phoneNumber = "0123456789";
+     status = " busy";
+     lastSeen = "never";
+    
     }
     
     User(string uname, string pwd, string phone) {
         // TODO: Implement parameterized constructor
+       username = uname;
+       password = pwd;
+       phoneNumber = phone;
+
     }
     
     string getUsername() const {
@@ -46,23 +56,29 @@ public:
     
     void setStatus(string newStatus) {
         // TODO: Implement setter
+        status = newStatus;
     }
     
     void setPhoneNumber(string phone) {
         // TODO: Implement setter
+        phoneNumber = phone;
     }
     
     void updateLastSeen() {
         // TODO: Implement last seen update
+        lastSeen = "never" ;
     }
     
     bool checkPassword(string pwd) const {
         // TODO: Implement password check
-        return false;
+        if( password != pwd)
+            
+          return false;
     }
     
     void changePassword(string newPwd) {
         // TODO: Implement password change
+        password = newPwd;
     }
 };
 
