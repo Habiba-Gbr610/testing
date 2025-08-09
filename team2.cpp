@@ -36,22 +36,22 @@ public:
     
     string getUsername() const {
         // TODO: Implement getter
-        return "";
+        return "username";
     }
     
     string getPhoneNumber() const {
         // TODO: Implement getter
-        return "";
+        return "phonenumber";
     }
     
     string getStatus() const {
         // TODO: Implement getter
-        return "";
+        return "status";
     }
     
     string getLastSeen() const {
         // TODO: Implement getter
-        return "";
+        return "lastseen";
     }
     
     void setStatus(string newStatus) {
@@ -96,56 +96,69 @@ private:
 public:
     Message() {
         // TODO: Implement default constructor
+        sender = "habiba" ;
+        content = "blablabla" ;
+        timestamp = "9 am";
+        status = "sent \ delivered \ seen ";
     }
     
     Message(string sndr, string cntnt) {
         // TODO: Implement parameterized constructor
+        sender = sndr;
+        content = cntnt;
     }
     
     string getContent() const {
         // TODO: Implement getter
-        return "";
+        return "content";
     }
     
     string getSender() const {
         // TODO: Implement getter
-        return "";
+        return "sender";
     }
     
     string getTimestamp() const {
         // TODO: Implement getter
-        return "";
+        return "timestamp";
     }
     
     string getStatus() const {
         // TODO: Implement getter
-        return "";
+        return "status";
     }
     
     Message* getReplyTo() const {
         // TODO: Implement getter
+        return replyTo;
         return nullptr;
     }
     
     void setStatus(string newStatus) {
         // TODO: Implement setter
+        status = newStatus;
     }
     
     void setReplyTo(Message* msg) {
         // TODO: Implement setter
+        replyTo =  msg;
     }
     
     void updateTimestamp() {
-        // TODO: Implement timestamp update
+        // TODO: Implement timestamp update 
+        timestamp = "9 am" ;
     }
     
     void display() const {
         // TODO: Implement message display
+        cout<<"sender :" << "contant :" << "timestamp :" << "status "<< endl;
     }
     
     void addEmoji(string emojiCode) {
         // TODO: Implement emoji support
-    }
+       content += "" + emojiCode;
+       
+     }
 };
 
 // ========================
