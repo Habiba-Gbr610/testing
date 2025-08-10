@@ -173,23 +173,31 @@ protected:
 public:
     Chat() {
         // TODO: Implement default constructor
+        chatName = "tarek " ;
     }
     
     Chat(vector<string> users, string name) {
         // TODO: Implement parameterized constructor
+        chatName = name;
     }
     
     void addMessage(const Message& msg) {
         // TODO: Implement message addition
-    }
+        messages.push_back(msg);
+        
+         }
     
     bool deleteMessage(int index, const string& username) {
         // TODO: Implement message deletion
-        return false;
+      if ( index < 0 || index >= messages.size())
+      return false;
+      if(messages [index] .getSender() != username)
+       return false;
     }
     
     virtual void displayChat() const {
         // TODO: Implement chat display
+        cout<< "chatname";
     }
     
     vector<Message> searchMessages(string keyword) const {
@@ -280,6 +288,8 @@ private:
     
     int findUserIndex(string username) const {
         // TODO: Implement user search
+       
+
         return -1;
     }
     
