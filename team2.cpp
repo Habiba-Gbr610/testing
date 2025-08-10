@@ -202,11 +202,17 @@ public:
     
     vector<Message> searchMessages(string keyword) const {
         // TODO: Implement message search
+        vector<Message> result;
+        for ( size_t i = 0;i< messages.size() ; i++)
+        if(chatName.find(keyword) == string :: npos)
+                   
         return {};
     }
     
     void exportToFile(const string& filename) const {
         // TODO: Implement export to file
+       
+          
     }
 };
 
@@ -217,22 +223,38 @@ class PrivateChat : public Chat {
 private:
     string user1;
     string user2;
-    
+    bool istyping1;
+    bool istyping2 ;   
 public:
     PrivateChat(string u1, string u2) {
         // TODO: Implement constructor
+        user1 = u1;
+        user2 = u2;
+        istyping1 = false;
+        istyping2 = false;
     }
     
     void displayChat() const override {
         // TODO: Implement private chat display
+        cout<< "user1 :"  << "user2 :" <<"istyping1 : "<< "istyping2"<<endl;
     }
     
     void showTypingIndicator(const string& username) const {
         // TODO: Implement typing indicator
-    }
-};
+        if(username == user1 && istyping1)
+          if(username == user2 && istyping2){
+            cout<< user1<< "is typing1" <<endl;
+            cout<< user2<< "is typing2" <<endl;
+          }
+          else{
+            cout<<username<<"is not tyiping"<<endl;
+          }
 
-// ========================
+        }  
+        
+ 
+    
+  // ========================
 //      GROUP CHAT CLASS
 // ========================
 class GroupChat : public Chat {
@@ -243,6 +265,9 @@ private:
 public:
     GroupChat(vector<string> users, string name, string creator) {
         // TODO: Implement constructor
+       
+
+
     }
     
     void addAdmin(string newAdmin) {
@@ -288,6 +313,7 @@ private:
     
     int findUserIndex(string username) const {
         // TODO: Implement user search
+        
        
 
         return -1;
@@ -295,6 +321,7 @@ private:
     
     bool isLoggedIn() const {
         // TODO: Implement login check
+      if(isLoggedIn())
         return false;
     }
     
@@ -363,3 +390,4 @@ int main() {
     whatsapp.run();
     return 0;
 }
+};
